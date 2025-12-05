@@ -2,10 +2,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
-import MainPage from "./Pages/MainPage"
 import Login from "./Pages/Login"
 import ListeDeProduits from "./Pages/ListeDeProduits"
 import DetailsDeProduits from "./Pages/DetailsDeProduits"
+import Register from './Pages/Register';
+import MainPage from './Pages/MainPage';
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="ProductDetails" element={<DetailsDeProduits />} />
-          <Route path="MainPage" element={<MainPage />} />
-          <Route path="Login" element={<Login />} />
-          <Route path="ListeDeProduits" element={<ListeDeProduits />} />
+          <Route path="/detail" element={<DetailsDeProduits />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/liste" element={<ListeDeProduits />} />
+          <Route path="/" element={<MainPage />} />
         </Routes>
 
         <Footer />

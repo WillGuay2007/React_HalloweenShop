@@ -23,7 +23,7 @@ function Register() {
 
     const handleInput = (e) => {
                 //console.log(value)
-        setValues(prev => ({...prev, [e.target.name]:[e.target.value]}))
+        setValues(prev => ({...prev, [e.target.name]:e.target.value}))
     }
     return (
         <div className = "d-flex bg-primary justify-content-center align-items-center">

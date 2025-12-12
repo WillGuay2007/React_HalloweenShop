@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
         <div className="container-fluid">
+
+
             
             <div className="d-flex justify-content-center align-items-center gap-1">
                 <div className="d-flex align-items-center">
@@ -72,22 +75,22 @@ export default function Header() {
 
                     <ul className="dropdown-menu">
                         <li>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to="/login">
                                 <span><img src="Images/Extra_imgs/Sign_in.png" /></span>Sign in
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to="/register">
                                 <span><img src="Images/Extra_imgs/Sign_up.png" /></span>Sign up
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <a href="#">
+                    <Link to="/liste">
                         <img src="Images/Extra_imgs/Shop_logo.png" />
-                    </a>
+                    </Link>
                 </div>
             </div>
 

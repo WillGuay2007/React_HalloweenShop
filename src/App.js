@@ -1,4 +1,8 @@
 import './App.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
@@ -11,9 +15,11 @@ import MainPage from './Pages/MainPage';
 function App() {
   return (
     <div className="App">
+    
+
       <BrowserRouter>
 
-        <Header />
+      <Header />
 
         <Routes>
           <Route path="/detail" element={<DetailsDeProduits />} />

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
     return (
         <div className="container-fluid">
@@ -46,7 +48,7 @@ export default function Footer() {
             <div className="d-flex justify-content-center align-items-start bg-light gap-5">
 
                 <div className="d-flex flex-column align-items-center">
-                    <a className="h4 text-decoration-none" href="MainPage.html">Home</a>
+                    <Link className="h4 text-decoration-none" to="/">Home</Link>
                     <a className="h4 text-decoration-none" href="#">My account</a>
                     <a className="h4 text-decoration-none" href="#">Track your order</a>
                 </div>

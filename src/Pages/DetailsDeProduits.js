@@ -1,9 +1,15 @@
+import { useLocation } from "react-router-dom";
+
 export default function DetailsDeProduits() {
+
+    const location = useLocation();
+    const product = location.state.product;
+
     return (
         <div className="d-flex" style={{ width: "100%", height: "500px" }}>
             
             <div className="d-flex flex-fill" style={{ backgroundColor: "rgb(255,255,255)" }}>
-                <img src="Images/Costumes_web/Decorations.jpg" className="w-100 h-100" />
+                <img src={product.imageUrl} className="w-100 h-100" />
             </div>
 
             <div className="d-flex flex-column flex-fill">
@@ -22,7 +28,9 @@ export default function DetailsDeProduits() {
                             backgroundColor: "rgb(235,235,235)"
                         }}
                     >
-                        <span style={{ color: "darkred", fontWeight: "bold" }}>$9.99</span>
+                        <span style={{ color: "darkred", fontWeight: "bold" }}>
+                            ${product.price}
+                        </span>
                     </div>
 
                     <div
@@ -36,7 +44,7 @@ export default function DetailsDeProduits() {
                         }}
                     >
                         <span>
-                            or 4 interest-free payments of $2.50 with{" "}
+                            or 4 interest-free payments of ${(product.price / 4).toFixed(2)} with{" "}
                             <span style={{ fontWeight: 900 }}>sezzle</span>
                         </span>
                     </div>
@@ -52,7 +60,7 @@ export default function DetailsDeProduits() {
                         }}
                     >
                         <span style={{ color: "white", fontWeight: "bold" }}>
-                            Clearance - 83%
+                            {product.discountLabel}
                         </span>
                     </div>
 
@@ -66,7 +74,7 @@ export default function DetailsDeProduits() {
                             backgroundColor: "rgb(255,255,255)"
                         }}
                     >
-                        <span className="ms-3">Size</span>
+                        <span className="ms-3">{product.productName}</span>
                         <span className="me-3">Quantity</span>
                     </div>
 
@@ -81,7 +89,7 @@ export default function DetailsDeProduits() {
                         }}
                     >
                         <span className="ms-3">
-                            Standard - 9.99$
+                            Standard - ${product.price}
                             <span style={{ color: "darkred", fontStyle: "italic" }}> Only 2 left!</span>
                         </span>
 
